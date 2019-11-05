@@ -1,0 +1,111 @@
+.primary_area img{
+    width: 70%;
+}
+a{
+    cursor: pointer;
+}
+.display_area{
+    display: flex;
+    flex-direction: column;
+}
+.display_up{
+    width: 100%;
+    margin-bottom: 10px;
+    height: auto;
+    display: flex;
+}
+.instructionGuid img{
+    width: 300px;
+}
+.display_down{
+    width:100%;
+    display: block;
+    height: 300px;
+}
+.inst{
+    width: 60%;
+}
+.inst_add{
+    width: 70%;
+}
+.display_down_pc{
+    float: left;
+    width:50px;
+    border:0.5px solid black;
+}
+.display_down_ifid{
+    margin-left: 20px;
+    float: left;
+    width:60px;
+    border:0.5px solid black;
+}
+.display_down_register{
+    margin-left: 20px;
+    display: flex;
+    float: left;
+    width: 280px;
+    flex-wrap: wrap;
+}
+.display_down_register_item{
+    border:0.5px solid black;
+    width: 35px;
+}
+.display_down_register_init{
+    margin-top: 30px;
+}
+.display_down_register input{
+    width: 50px;
+}
+.display_down_idex{
+    margin-left: 20px;
+    margin-left: 20px;
+    float: left;
+    border:0.5px solid black;
+    width: 90px;
+}
+.display_down_idex ul{
+    margin-left: 30px;
+    padding: 0px;
+    width: 80px;
+    list-style-type:none;
+}
+.display_down_exmem{
+    border:0.5px solid black;
+    width: 100px;
+    margin-left: 20px;
+    float: left;
+}
+.display_down_exmem ul{
+    width: 100px;
+    padding: 0px;
+    margin-left: 30px;
+    list-style-type: none;
+}
+.display_down_memory{
+    margin-left: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    float: left;
+    width: 300px;
+}
+.display_down_memory_init{
+    margin-top: 30px;
+}
+.display_down_memory input{
+    width: 50px;
+}
+.display_down_memory_item{
+    border:0.5px solid black;
+    width:30px ;
+}
+.display_down_memwb{
+    border:0.5px solid black;
+    float: left;
+    margin-left: 30px;
+    width: 100px;
+}
+.display_down_memwb ul{
+    list-style-type: none;
+    padding: 0px;
+    margin-left: 20px;
+}

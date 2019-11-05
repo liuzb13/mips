@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./src/vue-2.4.0.js"></script> 
+    <link type="text/css" rel="stylesheet" href="./src/bootstrap-3.3.7.css">
+    <link rel="stylesheet" type="text/css" href="./src/sytle.css"></link>
+</head>
+<body>
+   <div id="app">
+       <div class="primary_area">
+           <div class="display_area">
+                <div class="display_up">
+                    <div class="inst">
+                        <table class="table table-striped" class="inst_table">
+                            <tr v-for="item in instructions" :key=item.id>
+                                <td>id:{{item.id}}</td>
+                                <td>{{item.value}}</td>
+                                <td><a @click.prevent='delInst(item.id)'>删除</a></td>
+                            </tr>
+                        </table>
+                        <div class="inst_add">
+                                <label>id：</label>
+                                <input type="text" v-model="midData.instId"></input>
+                                <label>指令：</label>
+                                <input type="text" v-model="midData.instValue"></input>
+                                <input type="button" value="添加" @click="addInstruction"></input>
+                            </div>
+                    </div>
+                    <div class="instructionGuid">
+                        <img src="./src/mipsOrder.png">
+                    </div>
+                </div>
+                <div class="display_down">
+                    <div class="display_down_pc">
+                        <h5>PC</h5>
+                        pc={{pc}}
+                    </div>
+                    <div class="display_down_ifid">
+                        <h5>if/id</h5>
+                        <br/>
+                        指令id={{if_idInstructionId}}
+                    </div>
+                    <div class="display_down_register">
+                        <div class="display_down_register_item" v-for="item in registers">
+                            <p>{{item.id}}:{{item.value}}</p>
+                        </div>
+                        <div class="display_down_register_init">
+                                <label>寄存器id：</label>
+                                <input type="text" v-model="midData.registerId"></input>
+                                <label>数值：</label>
+                                <input type="text" v-model='midData.registerValue'></input>
+                                <input type="button" value="修改" @click="registerInit()"></input>
+                        </div>
+                    </div>
+                    <div class="display_down_idex">
+                        <ul>
+                            <li>id/ex</li>
+                            <li><br/></li>
+                            <li>rs:{{id_ex.new.rs}}</li>
+                            <li>rt:{{id_ex.new.rt}}</li>
+                            <li>rd:{{id_ex.new.rd}}</li>
+                            <li>im:{{id_ex.new.rd}}</li>
+                        </ul>
+                    </div>
+                    <div class="display_down_exmem">
+                        <ul>
+                            <li>ex/mem</li>
+                            <li><br/></li>
+                            <li>rd:{{ex_mem.new.rd}}</li>
+                            <li>ans:{{ex_mem.new.ans}}</li>
+                        </ul>
+                    </div>
+                    <div class="display_down_memory">
+                        <div class="display_down_memory_item" v-for="item in memory">
+                            <p>{{item.id}}:{{item.value}}</p>
+                        </div>
+                       <div class="display_down_memory_init">
+                            <label>存储器id：</label>
+                            <input type="text" v-model="midData.memId"></input>
+                            <label>数值：</label>
+                            <input type="text" v-model="midData.memValue"></input>
+                            <input type="button" value="修改" @click="memInit()"></input>
+                       </div>
+                    </div>
+                    <div class="display_down_memwb">
+                        <ul>
+                            <li>mem/wb</li>
+                            <li><br/></li>
+                            <li>rd:{{mem_wb.rd}}</li>
+                            <li>ans:{{mem_wb.ans}}</li>
+                        </ul>
+                    </div>
+                </div>
+           </div>
+           <div><input type="button" value="下周期" @click="run_onestep" class="btn btn_control"></input></div>
+           <img src="./src/mips.PNG">
+       </div>
+   </div>
+   <script src="./src/main.js"></script>
+</body>
+</html>
